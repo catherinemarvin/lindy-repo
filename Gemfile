@@ -30,6 +30,9 @@ gem 'twitter-bootstrap-rails', '~>4.0'
 # Use Slim
 gem 'slim-rails', '~>3.1'
 
+# Use Devise
+gem 'devise', '~>4.3'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
