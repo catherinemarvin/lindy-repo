@@ -4,6 +4,14 @@ p
   strong Link:
   = @video.link
 
+p
+  strong Start:
+  = @video.start
+
+p
+  strong End:
+  = @video.end
+
 => link_to 'Edit', edit_video_path(@video)
 '|
 =< link_to 'Back', videos_path
