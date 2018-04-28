@@ -1,6 +1,7 @@
 App.YouTube = class {
-  constructor(element) {
-    this.element = element;
+  constructor(elementID, video) {
+    this.elementID = elementID;
+    this.video = video;
   }
 
   render() {
@@ -9,37 +10,23 @@ App.YouTube = class {
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   }
-}
 
-$(document).ready(function() {
-  var youtube = new App.YouTube($('#player'))
-  youtube.render();
-});
-
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player('player', {
-    height: '390',
-    width: '640',
-    videoId: 'M7lc1UVf-VE',
-    events: {
-      'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange
-    }
-  });
-}
-
-function onPlayerReady(event) {
-  event.target.playVideo();
-}
-
-var done = false;
-function onPlayerStateChange(event) {
-  if (event.data == YT.PlayerState.PLAYING && !done) {
-    setTimeout(stopVideo, 6000);
-    done = true;
+  onPlayerReady(event) {
+    event.target.playVideo();
   }
 }
 
-function stopVideo() {
-  player.stopVideo();
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player(youtube.elementID, {
+    height: '390',
+    width: '640',
+    videoId: youtube.video.youtube_id,
+    playerVars: {
+      start: youtube.video.start,
+      end: youtube.video.end,
+    },
+    events: {
+      'onReady': youtube.onPlayerReady,
+    }
+  });
 }

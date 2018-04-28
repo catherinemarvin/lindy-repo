@@ -17,3 +17,7 @@ p
 => link_to 'Edit', edit_video_path(@video)
 '|
 =< link_to 'Back', videos_path
+
+javascript:
+  var youtube = new App.YouTube('player',#{raw @video.to_json});
+  youtube.render();
