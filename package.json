@@ -1,5 +1,8 @@
 {
   "name": "lindy-repo",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^10.0.0"
+  }
 }
