@@ -13,7 +13,7 @@ table
   tbody
     - @videos.each do |video|
       tr
-        td = video.link
+        td = video.youtube_id
         td = video.start
         td = video.end
         td = link_to 'Show', video

@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20171125161426) do
   end
 
   create_table "videos", force: :cascade do |t|
-    t.string "link"
+    t.string "youtube_id"
     t.integer "start"
     t.integer "end"
     t.datetime "created_at", null: false

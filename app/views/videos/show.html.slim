@@ -1,8 +1,8 @@
 p#notice = notice
 
 p
-  strong Link:
-  = @video.link
+  strong YouTube ID:
+  = @video.youtube_id
 
 p
   strong Start:
@@ -11,6 +11,8 @@ p
 p
   strong End:
   = @video.end
+
+#player
 
 => link_to 'Edit', edit_video_path(@video)
 '|
