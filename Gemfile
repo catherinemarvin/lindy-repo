@@ -25,7 +25,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # Use Twitter Bootstrap
-gem 'twitter-bootstrap-rails', '~>4.0'
+gem 'bootstrap', '~> 4.1.0'
+gem 'sprockets-rails', '~> 3.2.1'
 
 # Use Slim
 gem 'slim-rails', '~>3.1'
