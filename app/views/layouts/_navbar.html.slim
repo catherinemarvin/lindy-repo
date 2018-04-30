@@ -2,4 +2,5 @@
   h5.my-0.mr-md-auto.font-weight-normal Company name
   nav.my-2.my-md-0.mr-md-3
     a.p-2.text-dark href='#' Foo
-  a.btn.btn-outline-primary href='#' Sign up
+  = link_to 'Sign up', new_user_registration_path,
+      class: "btn btn-outline-primary"
