@@ -34,6 +34,8 @@ gem 'slim-rails', '~>3.1'
 # Use Devise
 gem 'devise', '~>4.3'
 
+gem 'pundit', '~>1.1'
+
 gem 'jquery-rails', '~>4.3'
 
 gem 'typescript-rails', '~>0.6'
