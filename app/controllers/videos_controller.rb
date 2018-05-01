@@ -4,27 +4,33 @@ class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
   def index
-    @videos = Video.all
+    @videos = policy_scope(Video)
   end
 
   # GET /videos/1
   # GET /videos/1.json
   def show
+    authorize @video
   end
 
   # GET /videos/new
   def new
+    authorize Video
     @video = Video.new
   end
 
   # GET /videos/1/edit
   def edit
+    authorize @video
   end
 
   # POST /videos
   # POST /videos.json
   def create
     @video = Video.new(video_params)
+    authorize @video
+
+    @video.user = current_user
 
     respond_to do |format|
       if @video.save
@@ -40,6 +46,7 @@ class VideosController < ApplicationController
   # PATCH/PUT /videos/1
   # PATCH/PUT /videos/1.json
   def update
+    authorize @video
     respond_to do |format|
       if @video.update(video_params)
         format.html { redirect_to @video, notice: 'Video was successfully updated.' }
@@ -54,6 +61,7 @@ class VideosController < ApplicationController
   # DELETE /videos/1
   # DELETE /videos/1.json
   def destroy
+    authorize @video
     @video.destroy
     respond_to do |format|
       format.html { redirect_to videos_url, notice: 'Video was successfully destroyed.' }
