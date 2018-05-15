@@ -1,27 +1,28 @@
-h1 Listing videos
+.container
+  h1 Listing videos
 
-table.table.table-striped
-  thead
-    tr
-      th scope='col' #
-      th scope='col' Link
-      th scope='col' Start
-      th scope='col' End
-      th
-      th
-      th
-
-  tbody
-    - @videos.each do |video|
+  table.table.table-striped
+    thead
       tr
-        th scope='row' = video.id
-        td = video.youtube_id
-        td = video.start
-        td = video.end
-        td = link_to 'Show', video
-        td = link_to 'Edit', edit_video_path(video)
-        td = link_to 'Destroy', video, data: { confirm: 'Are you sure?' }, method: :delete
+        th scope='col' #
+        th scope='col' Link
+        th scope='col' Start
+        th scope='col' End
+        th
+        th
+        th
 
-br
+    tbody
+      - @videos.each do |video|
+        tr
+          th scope='row' = video.id
+          td = video.youtube_id
+          td = video.start
+          td = video.end
+          td = link_to 'Show', video
+          td = link_to 'Edit', edit_video_path(video)
+          td = link_to 'Destroy', video, data: { confirm: 'Are you sure?' }, method: :delete
 
-= link_to 'New Video', new_video_path
+  br
+
+  = link_to 'New Video', new_video_path
