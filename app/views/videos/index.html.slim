@@ -1,11 +1,12 @@
 h1 Listing videos
 
-table
+table.table.table-striped
   thead
     tr
-      th Link
-      th Start
-      th End
+      th scope='col' #
+      th scope='col' Link
+      th scope='col' Start
+      th scope='col' End
       th
       th
       th
@@ -13,6 +14,7 @@ table
   tbody
     - @videos.each do |video|
       tr
+        th scope='row' = video.id
         td = video.youtube_id
         td = video.start
         td = video.end
