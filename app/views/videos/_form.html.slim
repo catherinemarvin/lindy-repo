@@ -6,9 +6,9 @@
         - @video.errors.full_messages.each do |message|
           li = message
 
-  .field
+  .form-group
     = f.label :youtube_id
-    = f.text_field :youtube_id
+    = f.text_field :youtube_id, class: 'form-control'
   .field
     = f.label :start
     = f.number_field :start
