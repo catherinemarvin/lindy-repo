@@ -8,6 +8,7 @@
         th scope='col' Link
         th scope='col' Start
         th scope='col' End
+        th scope='col' Owner
         th
         th
         th
@@ -19,6 +20,7 @@
           td = video.youtube_id
           td = video.start
           td = video.end
+          td = video.user.id
           td = link_to 'Show', video
           td = link_to 'Edit', edit_video_path(video)
           td = link_to 'Destroy', video, data: { confirm: 'Are you sure?' }, method: :delete
