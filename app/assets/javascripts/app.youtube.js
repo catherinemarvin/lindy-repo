@@ -18,8 +18,6 @@ App.YouTube = class {
 
 function onYouTubeIframeAPIReady() {
   player = new YT.Player(youtube.elementID, {
-    height: '390',
-    width: '640',
     videoId: youtube.video.youtube_id,
     playerVars: {
       start: youtube.video.start,
